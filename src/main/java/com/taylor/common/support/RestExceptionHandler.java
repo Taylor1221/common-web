@@ -1,0 +1,26 @@
+package com.taylor.common.support;
+
+import com.taylor.common.util.MDCUtil;
+import com.taylor.common.domain.Result;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+/**
+ * 接口全局异常处理
+ *
+ * @author loveCamille
+ * @date 2025-04-02 21:54:34
+ */
+@Slf4j
+@RestControllerAdvice
+public class RestExceptionHandler {
+
+    @ExceptionHandler(Exception.class)
+    public Result<Void> exception(Exception e) {
+        String message = String.format("发生未知异常, 请求流水号: %s", MDCUtil.get());
+        log.error("{}", message, e);
+        return Result.fail(message);
+    }
+
+}
