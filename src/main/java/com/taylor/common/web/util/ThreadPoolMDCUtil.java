@@ -1,4 +1,4 @@
-package com.taylor.common.util;
+package com.taylor.common.web.util;
 
 import cn.hutool.core.text.CharSequenceUtil;
 

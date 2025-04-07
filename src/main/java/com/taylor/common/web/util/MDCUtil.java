@@ -1,7 +1,7 @@
-package com.taylor.common.util;
+package com.taylor.common.web.util;
 
 import cn.hutool.core.util.IdUtil;
-import com.taylor.common.constant.WebConstant;
+import com.taylor.common.web.constant.WebConstant;
 import org.slf4j.MDC;
 
 import java.util.Map;

@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.taylor.common.CommonWebAutoConfiguration
+com.taylor.common.web.CommonWebAutoConfiguration

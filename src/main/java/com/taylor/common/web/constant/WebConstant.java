@@ -1,4 +1,4 @@
-package com.taylor.common.constant;
+package com.taylor.common.web.constant;
 
 /**
  * Web常量

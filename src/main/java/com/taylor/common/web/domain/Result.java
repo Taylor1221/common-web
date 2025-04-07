@@ -1,4 +1,4 @@
-package com.taylor.common.domain;
+package com.taylor.common.web.domain;
 
 import lombok.Getter;
 import lombok.Setter;

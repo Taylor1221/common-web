@@ -1,7 +1,7 @@
-package com.taylor.common.support;
+package com.taylor.common.web.support;
 
-import com.taylor.common.util.MDCUtil;
-import com.taylor.common.domain.Result;
+import com.taylor.common.web.util.MDCUtil;
+import com.taylor.common.web.domain.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;

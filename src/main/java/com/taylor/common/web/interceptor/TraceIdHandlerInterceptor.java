@@ -1,8 +1,8 @@
-package com.taylor.common.interceptor;
+package com.taylor.common.web.interceptor;
 
 import cn.hutool.core.text.CharSequenceUtil;
-import com.taylor.common.util.MDCUtil;
-import com.taylor.common.constant.WebConstant;
+import com.taylor.common.web.util.MDCUtil;
+import com.taylor.common.web.constant.WebConstant;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;

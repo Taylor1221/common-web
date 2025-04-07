@@ -1,6 +1,6 @@
-package com.taylor.common.support;
+package com.taylor.common.web.support;
 
-import com.taylor.common.interceptor.TraceIdHandlerInterceptor;
+import com.taylor.common.web.interceptor.TraceIdHandlerInterceptor;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 

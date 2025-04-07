@@ -1,7 +1,7 @@
-package com.taylor.common;
+package com.taylor.common.web;
 
-import com.taylor.common.support.RestExceptionHandler;
-import com.taylor.common.support.WebMvcAppConfigurer;
+import com.taylor.common.web.support.RestExceptionHandler;
+import com.taylor.common.web.support.WebMvcAppConfigurer;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
