@@ -1,6 +1,5 @@
 package com.taylor.common.web.support;
 
-import com.taylor.common.web.exception.FrozenException;
 import com.taylor.common.web.util.MDCUtil;
 import com.taylor.common.web.domain.Result;
 import lombok.extern.slf4j.Slf4j;
@@ -17,8 +16,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class RestExceptionHandler {
 
-    @ExceptionHandler(FrozenException.class)
-    public Result<Void> exception(FrozenException e) {
+    @ExceptionHandler(RuntimeException.class)
+    public Result<Void> exception(RuntimeException e) {
         return Result.fail(e.getMessage());
     }
 
