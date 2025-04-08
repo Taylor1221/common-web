@@ -1,7 +1,5 @@
 package com.taylor.common.web.exception;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * 冻结异常
@@ -11,8 +9,8 @@ import java.util.Date;
  */
 public class FrozenException extends RuntimeException {
 
-    public FrozenException(String message, Date expiredAfter) {
-        super(message + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(expiredAfter));
+    public FrozenException(String message) {
+        super(message);
     }
 
 }
