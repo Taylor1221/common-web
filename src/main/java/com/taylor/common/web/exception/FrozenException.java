@@ -1,7 +1,5 @@
 package com.taylor.common.web.exception;
 
-import com.taylor.common.web.constant.MessageConstant;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -13,9 +11,8 @@ import java.util.Date;
  */
 public class FrozenException extends RuntimeException {
 
-    public FrozenException(Date expiredAfter) {
-        super(String.format(MessageConstant.FROZEN_MESSAGE,
-                new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(expiredAfter)));
+    public FrozenException(String message, Date expiredAfter) {
+        super(message + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(expiredAfter));
     }
 
 }
