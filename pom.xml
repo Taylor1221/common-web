@@ -4,12 +4,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.18</version>
+        <groupId>com.taylor.common</groupId>
+        <artifactId>common-parent</artifactId>
+        <version>1.0.1</version>
     </parent>
 
-    <groupId>com.taylor.common</groupId>
     <artifactId>common-web</artifactId>
     <version>${common-web.version}</version>
 
@@ -19,7 +18,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <common-web.version>1.0.1</common-web.version>
 
-        <hutool.version>5.8.36</hutool.version>
     </properties>
 
     <dependencies>
@@ -28,7 +26,6 @@
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
-            <version>${hutool.version}</version>
         </dependency>
 
         <dependency>
@@ -39,7 +36,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <scope>provided</scope>
         </dependency>
 
     </dependencies>
