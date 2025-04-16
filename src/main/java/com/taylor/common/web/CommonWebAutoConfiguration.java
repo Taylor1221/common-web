@@ -19,11 +19,6 @@ import org.springframework.web.servlet.DispatcherServlet;
 @ConditionalOnClass(DispatcherServlet.class)
 public class CommonWebAutoConfiguration {
 
-//    @Bean
-//    public WebMvcAppConfigurer webMvcAppConfigurer() {
-//        return new WebMvcAppConfigurer();
-//    }
-
     @Bean
     public FilterRegistrationBean<TraceIdFilter> traceIdFilter() {
         FilterRegistrationBean<TraceIdFilter> registration = new FilterRegistrationBean<>();
