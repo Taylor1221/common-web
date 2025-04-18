@@ -1,14 +1,19 @@
 package com.taylor.common.web.support;
 
 import com.taylor.common.web.exception.BizException;
+import com.taylor.common.web.exception.RateLimitException;
 import com.taylor.common.web.util.MDCUtil;
 import com.taylor.common.web.domain.Result;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -34,6 +39,16 @@ public class RestExceptionHandler {
     @ExceptionHandler(BizException.class)
     public Result<Void> bizException(BizException e) {
         return Result.fail(e.getMessage());
+    }
+
+
+    @ExceptionHandler(RateLimitException.class)
+    public ResponseEntity<Map<String, Object>> handleRateLimitException(RateLimitException ex) {
+        Map<String, Object> body = new HashMap<>();
+        body.put("code", 429);
+        body.put("msg", ex.getMessage());
+        body.put("timestamp", System.currentTimeMillis());
+        return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).body(body);
     }
 
     @ExceptionHandler(Exception.class)

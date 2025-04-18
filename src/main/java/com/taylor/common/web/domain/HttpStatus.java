@@ -22,6 +22,8 @@ public interface HttpStatus {
 
         FORBIDDEN(403, "暂无权限访问"),
 
+        TOO_MANY_REQUESTS(429, "操作过于频繁"),
+
         ;
 
         private final int code;
