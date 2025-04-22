@@ -53,4 +53,8 @@ public class Result<T> {
         return reply(HttpStatus.BaseHttpStatus.ERROR.getCode(), msg);
     }
 
+    public static <T> Result<T> fail(HttpStatus httpStatus) {
+        return reply(httpStatus, null);
+    }
+
 }
