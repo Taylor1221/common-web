@@ -1,5 +1,7 @@
 package com.taylor.common.web;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.taylor.common.web.aop.RequestLogAspect;
 import com.taylor.common.web.filter.TraceIdFilter;
 import com.taylor.common.web.support.RestExceptionHandler;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
@@ -31,6 +33,11 @@ public class CommonWebAutoConfiguration {
     @Bean
     public RestExceptionHandler restExceptionHandler() {
         return new RestExceptionHandler();
+    }
+
+    @Bean
+    public RequestLogAspect requestLogAspect(ObjectMapper objectMapper) {
+        return new RequestLogAspect(objectMapper);
     }
 
 }
