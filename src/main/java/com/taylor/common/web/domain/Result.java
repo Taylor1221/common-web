@@ -1,5 +1,6 @@
 package com.taylor.common.web.domain;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
@@ -14,12 +15,16 @@ import lombok.experimental.Accessors;
 @Setter
 @Accessors(chain = true)
 @SuppressWarnings("unused")
+@Schema(description = "通用结果")
 public class Result<T> {
 
+    @Schema(description = "状态码")
     private Integer code;
 
+    @Schema(description = "响应消息")
     private String msg;
 
+    @Schema(description = "响应数据")
     private T data;
 
     private Result() {

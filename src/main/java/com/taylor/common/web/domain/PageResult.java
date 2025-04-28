@@ -1,5 +1,6 @@
 package com.taylor.common.web.domain;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
 import java.util.List;
@@ -11,26 +12,19 @@ import java.util.List;
  * @date 2025-04-28 13:56:38
  */
 @Data
+@Schema(description = "通用分页结果")
 public class PageResult<T> {
 
-    /**
-     * 查询数据列表
-     */
+    @Schema(description = "查询数据列表")
     private List<T> records;
 
-    /**
-     * 数据总条数
-     */
+    @Schema(description = "数据总条数")
     private long total;
 
-    /**
-     * 每页显示的条数
-     */
+    @Schema(description = "每页显示的条数")
     private long size;
 
-    /**
-     * 当前页数
-     */
+    @Schema(description = "当前页数")
     private long current;
 
 }

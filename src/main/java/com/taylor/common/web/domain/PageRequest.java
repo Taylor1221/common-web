@@ -2,6 +2,7 @@ package com.taylor.common.web.domain;
 
 import com.baomidou.mybatisplus.core.metadata.OrderItem;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
 import java.util.List;
@@ -13,26 +14,19 @@ import java.util.List;
  * @date 2025-04-28 14:10:47
  */
 @Data
+@Schema(description = "通用分页请求")
 public class PageRequest<T> {
 
-    /**
-     * 当前页数
-     */
+    @Schema(description = "当前页数")
     private Long current = 1L;
 
-    /**
-     * 每页大小，默认 10
-     */
+    @Schema(description = "每页大小，默认 10")
     private Long size = 10L;
 
-    /**
-     * 查询条件
-     */
+    @Schema(description = "查询条件")
     private T queryCondition;
 
-    /**
-     * 排序列表
-     */
+    @Schema(description = "排序列表")
     private List<OrderItem> orderItems;
 
     /**
