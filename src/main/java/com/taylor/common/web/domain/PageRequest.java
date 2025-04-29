@@ -42,4 +42,8 @@ public class PageRequest<T> {
         return page;
     }
 
+    public void setSize(Long size) {
+        this.size = (size <= 0 || size > 500) ? 10L : size;
+    }
+
 }

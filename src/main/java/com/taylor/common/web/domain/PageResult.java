@@ -19,12 +19,12 @@ public class PageResult<T> {
     private List<T> records;
 
     @Schema(description = "数据总条数")
-    private long total;
+    private Long total;
 
     @Schema(description = "每页显示的条数")
-    private long size;
+    private Long size;
 
     @Schema(description = "当前页数")
-    private long current;
+    private Long current;
 
 }
