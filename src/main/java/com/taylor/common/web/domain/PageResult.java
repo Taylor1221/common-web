@@ -3,6 +3,7 @@ package com.taylor.common.web.domain;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
+import org.springframework.beans.BeanUtils;
 
 import java.util.List;
 
@@ -41,6 +42,12 @@ public class PageResult<T> {
         pageResult.setSize(page.getSize());
         pageResult.setCurrent(page.getCurrent());
         return pageResult;
+    }
+
+    public <V> PageResult<?> copyProperties(PageResult<T> pageResult, Class<V> clazz) {
+        PageResult<V> result = new PageResult<>();
+        BeanUtils.copyProperties(pageResult, result);
+        return result;
     }
 
 }
