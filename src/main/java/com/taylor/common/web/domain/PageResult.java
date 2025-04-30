@@ -1,5 +1,6 @@
 package com.taylor.common.web.domain;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
@@ -26,5 +27,20 @@ public class PageResult<T> {
 
     @Schema(description = "当前页数")
     private Long current;
+
+    /**
+     * 将 MyBatis-Plus的Page对象转成 PageResult
+     * @author loveCamille
+     * @param page yBatis-Plus的Page对象
+     * @return {@link PageResult<T>} PageResult
+    */
+    public static <T> PageResult<T> of(IPage<T> page) {
+        PageResult<T> pageResult = new PageResult<>();
+        pageResult.setRecords(page.getRecords());
+        pageResult.setTotal(page.getTotal());
+        pageResult.setSize(page.getSize());
+        pageResult.setCurrent(page.getCurrent());
+        return pageResult;
+    }
 
 }
