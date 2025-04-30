@@ -44,8 +44,8 @@ public class PageResult<T> {
         return pageResult;
     }
 
-    public <V> PageResult<?> copyProperties(Class<V> clazz) {
-        PageResult<V> result = new PageResult<>();
+    public <R> PageResult<R> copyProperties(Class<R> clazz) {
+        PageResult<R> result = new PageResult<>();
         BeanUtils.copyProperties(this, result);
         return result;
     }
