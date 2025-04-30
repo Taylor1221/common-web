@@ -1,5 +1,6 @@
 package com.taylor.common.web.domain;
 
+import cn.hutool.core.bean.BeanUtil;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
@@ -47,6 +48,7 @@ public class PageResult<T> {
     public <R> PageResult<R> copyProperties(Class<R> clazz) {
         PageResult<R> result = new PageResult<>();
         BeanUtils.copyProperties(this, result);
+        result.setRecords(BeanUtil.copyToList(result.getRecords(), clazz));
         return result;
     }
 
